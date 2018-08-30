@@ -88,4 +88,4 @@ ProxyPassReverse / http://127.0.0.1:8181/
 
 ## Thanks
 
-thanks go to TRITEMA SA, [[www.tritema.ch]] for letting test on dedicated cloud servers
+thanks go to TRITEMA SA, www.tritema.ch for allowing tests on dedicated cloud servers
