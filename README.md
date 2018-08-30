@@ -1,19 +1,29 @@
-# turtl-docker
+# turtl
 
-Docker file to run turtl (turtl.it) api server
+Docker file to run turtl (turtl.it) api server. this is a fork of original by Arthur Garnier. The same with fixes and docker-compose support
 
 ## How to build ?
 
 ```
-sudo docker build -t turtl_docker .
+sudo docker build -t turtl .
 ```
 
 
 ## How to run ?
 
 ```
-sudo docker run -d -p 8181:8181 -v $(pwd)/volume:/var/lib/rethinkdb/instance1 -t turtl_docker
+sudo docker run -d -p 8181:8181 -v $(pwd)/volume:/var/lib/rethinkdb/instance1 -t turtl
 ```
+
+or with docker compose
+
+
+```
+sudo docker-compose up -d
+```
+
+when you run with docker-compose, please adjust the docker-compose.yml file with environment variables and location of volume
+
 ## Configuration
 
 The image supports the following environment variables that will be injected in the configuration at each restart of the container :

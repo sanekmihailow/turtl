@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    image: massmux/turtl
+    restart: always
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./turtldata:/var/lib/rethinkdb/instance1
+    environment:
+      BINDADDR: '0.0.0.0'
+      BINDPORT: '8181'
+
+
