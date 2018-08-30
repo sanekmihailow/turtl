@@ -26,7 +26,7 @@ when you run with docker-compose, please adjust the docker-compose.yml file with
 
 ## Configuration
 
-The image supports the following environment variables that will be injected in the configuration at each restart of the container :
+The image supports the following environment variables that will be set in the configuration at each restart of the container. You can specify these variables in the correct area of docker-compose.yml file.
 
 - PIDFILE: defaults to 'nil'
 - BINDADDR: defaults to '0.0.0.0'
@@ -48,12 +48,12 @@ The image supports the following environment variables that will be injected in 
                               :bucket ''
                               :endpoint 'https://s3.amazonaws.com')"
 
-## How to run behind an Apache proxy ? (safer)
+## How to run behind an Apache proxy
 
 First, listen only on localhost :
 
 ```
-sudo docker run -d --name turtl -p 127.0.0.1:8181:8181 -v $(pwd)/volume:/var/lib/rethinkdb/instance1 -t turtl_docker
+sudo docker run -d --name turtl -p 127.0.0.1:8181:8181 -v $(pwd)/volume:/var/lib/rethinkdb/instance1 -t turtl
 ```
 
 Secondly add your reverse proxy in Apache conf :
@@ -85,3 +85,7 @@ ProxyPassReverse / http://127.0.0.1:8181/
 
 </VirtualHost>
 ```
+
+## Thanks
+
+thanks go to TRITEMA SA, [[www.tritema.ch]] for letting test on dedicated cloud servers
