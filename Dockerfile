@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 ENV CCL_VERSION 1.11
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD https://download.rethinkdb.com/apt/pubkey.gpg /tmp/rethinkdb-pubkey.gpg
 RUN echo "deb http://download.rethinkdb.com/apt xenial main" | tee /etc/apt/sources.list.d/rethinkdb.list && \
 	apt-key add - < /tmp/rethinkdb-pubkey.gpg && \
 	apt-get update && \
